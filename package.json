@@ -10,8 +10,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "drizzle-kit": "^0.20.13",
     "nuxt": "^3.9.3",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.4.2",
+    "@lucia-auth/adapter-sqlite": "^3.0.0",
+    "drizzle-orm": "^0.29.3",
+    "lucia": "^3.0.1",
+    "oslo": "^1.0.3"
   }
 }
