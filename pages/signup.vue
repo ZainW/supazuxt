@@ -50,9 +50,9 @@ async function signup(data: any) {
       <!--  <NuxtLink to="/" class="text-primary font-medium">Forgot password?</NuxtLink>-->
       <!--</template>-->
 
-      <template #footer>
+      <!-- <template #footer>
         By signing in, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
-      </template>
+      </template> -->
     </UAuthForm>
   </UCard>
 <!--	<h1>Create an account</h1>-->

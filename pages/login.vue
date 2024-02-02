@@ -21,10 +21,10 @@ const validate = (state: any) => {
 }
 
 async function login(data: any) {
-	await useFetch("/api/login", {
+	await $fetch("/api/login", {
 		method: "POST",
 		body: data,
-		async onResponseError() {
+		async onResponse() {
 			await navigateTo('/')
 		}
 	});
