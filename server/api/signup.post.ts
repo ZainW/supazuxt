@@ -5,8 +5,8 @@ import { db } from "../utils/drizzle";
 import { userTable } from "../utils/schema";
 
 export default eventHandler(async (event) => {
-	const formData = await readFormData(event);
-	const username = formData.get("username");
+	const formData = await readBody(event);
+	const username = formData.username;
 	if (
 		typeof username !== "string" ||
 		username.length < 3 ||
@@ -18,7 +18,7 @@ export default eventHandler(async (event) => {
 			statusCode: 400
 		});
 	}
-	const password = formData.get("password");
+	const password = formData.password;
 	if (typeof password !== "string" || password.length < 6 || password.length > 255) {
 		throw createError({
 			message: "Invalid password",
@@ -30,11 +30,20 @@ export default eventHandler(async (event) => {
 	const userId = generateId(15);
 
 	// TODO: check if username is already used
-	await db.insert(userTable).values({
-		id: userId,
-		username: username,
-		password: hashedPassword
-	});
+//	try{
+		await db.insert(userTable).values({
+			id: userId,
+			username: username,
+			password: hashedPassword
+		});
+//	} catch (e) {
+//		if(e instanceof DrizzleError && e.message === 'SQLITE_CONSTRAINT_UNIQUE'){
+//			throw createError({
+//				     message: 'Username already taken',
+//				     statusCode: 400,
+//				   }) 
+//		}
+//    }
 
 	const session = await lucia.createSession(userId, {});
 	appendHeader(event, "Set-Cookie", lucia.createSessionCookie(session.id).serialize());

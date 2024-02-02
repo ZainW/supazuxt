@@ -2,8 +2,8 @@ import { eq } from "drizzle-orm";
 import { Argon2id } from "oslo/password";
 
 export default eventHandler(async (event) => {
-	const formData = await readFormData(event);
-	const username = formData.get("username");
+	const formData = await readBody(event);
+	const username = formData.username;
 	if (
 		typeof username !== "string" ||
 		username.length < 3 ||
@@ -15,7 +15,7 @@ export default eventHandler(async (event) => {
 			statusCode: 400
 		});
 	}
-	const password = formData.get("password");
+	const password = formData.password;
 	if (typeof password !== "string" || password.length < 6 || password.length > 255) {
 		throw createError({
 			message: "Invalid password",
