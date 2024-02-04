@@ -21,6 +21,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - env:
+        NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
 
     - uses: pnpm/action-setup@v2
       name: Install pnpm
