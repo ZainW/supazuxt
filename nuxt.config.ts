@@ -2,5 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['@nuxt/ui-pro'],
-  modules: ['@nuxt/ui'],
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/image',
+    '@nuxtjs/seo',
+    '@vueuse/nuxt',
+    '@vite-pwa/nuxt',
+  ],
 })
