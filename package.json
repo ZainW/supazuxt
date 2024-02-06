@@ -12,10 +12,10 @@
     "lint": "eslint --fix"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.3",
+    "@antfu/eslint-config": "^2.6.4",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.56.0",
-    "nuxt": "^3.10.0",
+    "nuxt": "^3.10.1",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
@@ -25,6 +25,6 @@
     "@nuxt/ui-pro": "^0.7.5",
     "drizzle-orm": "^0.29.3",
     "lucia": "^3.0.1",
-    "oslo": "^1.0.3"
+    "oslo": "^1.0.4"
   }
 }
