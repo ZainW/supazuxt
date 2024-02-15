@@ -12,7 +12,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "@libsql/client": "^0.4.3",
+    "@libsql/client": "^0.5.0",
     "@lucia-auth/adapter-sqlite": "^3.0.0",
     "@nuxt/ui-pro": "^0.7.5",
     "drizzle-orm": "^0.29.3",
